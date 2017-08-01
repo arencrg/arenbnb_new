@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h2>User: <%= current_user.full_name%></h2>
+<p>Photo: <%= image_tag(current_user.avatar)%></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Room name</th>
+      <th>Room price</th>
+      <th>Room type</th>
+      <th>Room details</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bnbrooms.each do |bnbroom| %>
+      <tr>
+        <td><%= bnbroom.room_name %></td>
+        <td><%= bnbroom.room_price %></td>
+        <td><%= bnbroom.room_type %></td>
+        <td><%= bnbroom.room_details %></td>
+        <td><%= link_to 'Show', bnbroom %></td>
+        <td><%= link_to 'Edit', edit_bnbroom_path(bnbroom) %></td>
+        <td><%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bnbroom', new_bnbroom_path %>

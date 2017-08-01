@@ -1,0 +1,2 @@
+json.extract! bnbroom, :id, :room_name, :room_price, :room_type, :room_details, :bedcount, :bedroomcount, :bathroomcount, :country, :neighborhood, :selfcheckin, :tvavail, :wifiavail, :acavail, :essentialsavail, :parkingavail, :kitchenvail, :heatingavail, :deskavail, :famfriendly, :created_at, :updated_at
+json.url bnbroom_url(bnbroom, format: :json)

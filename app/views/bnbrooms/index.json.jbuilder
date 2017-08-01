@@ -1,0 +1,1 @@
+json.array! @bnbrooms, partial: 'bnbrooms/bnbroom', as: :bnbroom

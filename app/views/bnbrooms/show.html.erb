@@ -1,0 +1,106 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photos:</strong>
+    <%= @bnbroom.photos.each do |photos| %>
+    <%= image_tag(photos) %>
+    <% end %>
+</p>
+
+<p>
+  <strong>Room name:</strong>
+  <%= @bnbroom.room_name %>
+</p>
+
+<p>
+  <strong>Room price:</strong>
+  <%= @bnbroom.room_price %>
+</p>
+
+<p>
+  <strong>Room type:</strong>
+  <%= @bnbroom.room_type %>
+</p>
+
+<p>
+  <strong>Room details:</strong>
+  <%= @bnbroom.room_details %>
+</p>
+
+<p>
+  <strong>Bedcount:</strong>
+  <%= @bnbroom.bedcount %>
+</p>
+
+<p>
+  <strong>Bedroomcount:</strong>
+  <%= @bnbroom.bedroomcount %>
+</p>
+
+<p>
+  <strong>Bathroomcount:</strong>
+  <%= @bnbroom.bathroomcount %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @bnbroom.country %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @bnbroom.neighborhood %>
+</p>
+
+<p>
+  <strong>Selfcheckin:</strong>
+  <%= @bnbroom.selfcheckin %>
+</p>
+
+<p>
+  <strong>Tvavail:</strong>
+  <%= @bnbroom.tvavail %>
+</p>
+
+<p>
+  <strong>Wifiavail:</strong>
+  <%= @bnbroom.wifiavail %>
+</p>
+
+<p>
+  <strong>Acavail:</strong>
+  <%= @bnbroom.acavail %>
+</p>
+
+<p>
+  <strong>Essentialsavail:</strong>
+  <%= @bnbroom.essentialsavail %>
+</p>
+
+<p>
+  <strong>Parkingavail:</strong>
+  <%= @bnbroom.parkingavail %>
+</p>
+
+<p>
+  <strong>Kitchenvail:</strong>
+  <%= @bnbroom.kitchenvail %>
+</p>
+
+<p>
+  <strong>Heatingavail:</strong>
+  <%= @bnbroom.heatingavail %>
+</p>
+
+<p>
+  <strong>Deskavail:</strong>
+  <%= @bnbroom.deskavail %>
+</p>
+
+<p>
+  <strong>Famfriendly:</strong>
+  <%= @bnbroom.famfriendly %>
+</p>
+
+<%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %> |
+<%= link_to 'Back', bnbrooms_path %>

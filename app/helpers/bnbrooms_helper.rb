@@ -1,0 +1,2 @@
+module BnbroomsHelper
+end
