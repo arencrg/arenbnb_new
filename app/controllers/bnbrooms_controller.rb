@@ -1,6 +1,7 @@
 class BnbroomsController < ApplicationController
   before_action :set_bnbroom, only: [:show, :edit, :update, :destroy]
 
+
   # GET /bnbrooms
   # GET /bnbrooms.json
   def index
@@ -69,6 +70,6 @@ class BnbroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bnbroom_params
-      params.require(:bnbroom).permit(:room_name, :room_price, :room_type, :room_details, :bedcount, :bedroomcount, :bathroomcount, :country, :neighborhood, :selfcheckin, :tvavail, :wifiavail, :acavail, :essentialsavail, :parkingavail, :kitchenvail, :heatingavail, :deskavail, :famfriendly, photos:[])
+      params.require(:bnbroom).permit(:room_name, :room_price, :room_type, :room_details, :bedcount, :bedroomcount, :bathroomcount, :country, :neighborhood, :selfcheckin, :tvavail, :wifiavail, :acavail, :essentialsavail, :parkingavail, :kitchenvail, :heatingavail, :deskavail, :famfriendly, {photos:[]})
     end
 end

@@ -1,11 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Photos:</strong>
-    <%= @bnbroom.photos.each do |photos| %>
-    <%= image_tag(photos) %>
-    <% end %>
-</p>
+
+
+    <strong>Photos:</strong>
+<div class = "slickthing">
+   <% @bnbroom.photos.each do |postphotos| %>
+  <div class = "photo">
+    <%= image_tag(postphotos) %>
+  </div>
+  <% end %>
+</div>
+
 
 <p>
   <strong>Room name:</strong>
