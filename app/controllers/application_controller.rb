@@ -9,7 +9,26 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :bio, :location, :schoolwork])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :avatar, :full_name, :nickname, :bio, :contact, :location, :schoolwork])
   end
+  
+    helper_method :resource_name, :resource, :devise_mapping, :resource_class
+
+  def resource_name
+    :user
+  end
+ 
+  def resource
+    @resource ||= User.new
+  end
+
+  def resource_class
+    User
+  end
+ 
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
   
 end

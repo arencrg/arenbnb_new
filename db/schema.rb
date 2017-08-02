@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170802100305) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "photos"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170802100305) do
     t.text     "bio"
     t.string   "location"
     t.string   "schoolwork"
+    t.integer  "user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

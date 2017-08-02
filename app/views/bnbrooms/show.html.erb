@@ -23,6 +23,11 @@
 </p>
 
 <p>
+  <strong>Host:</strong>
+  <%= @bnbroom.user.full_name %>
+</p>
+
+<p>
   <strong>Room type:</strong>
   <%= @bnbroom.room_type %>
 </p>
@@ -107,11 +112,12 @@
   <%= @bnbroom.famfriendly %>
 </p>
 
-<%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %> |
+
+<br/>
 
 
-    <% if @bnbroom.user == current_user %>
-    <%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %> 
-    
+<% if @bnbroom.user.id == current_user.id %>
+<%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %>
+<%= link_to 'Destroy', @bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 <%= link_to 'Back', bnbrooms_path %>

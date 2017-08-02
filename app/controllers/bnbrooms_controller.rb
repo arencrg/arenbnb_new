@@ -24,19 +24,21 @@ class BnbroomsController < ApplicationController
 
   # POST /bnbrooms
   # POST /bnbrooms.json
+  
   def create
-    @bnbroom = Bnbroom.new(bnbroom_params)
-
-    respond_to do |format|
-      if @bnbroom.save
-        format.html { redirect_to @bnbroom, notice: 'Bnbroom was successfully created.' }
-        format.json { render :show, status: :created, location: @bnbroom }
-      else
-        format.html { render :new }
-        format.json { render json: @bnbroom.errors, status: :unprocessable_entity }
-      end
+  @user = current_user
+  @bnbroom = Bnbroom.create(bnbroom_params.merge(user_id: current_user.id))
+  respond_to do |format|
+    if @user.save
+      format.html { redirect_to @bnbroom, notice: 'Room was successfully created.' }
+      format.json { render json: @user.bnbroom, status: :created, location: @user.bnbroom }
+    else
+      format.html { render action: "new" }
+      format.json { render json: @user.bnbroom.errors, status: :unprocessable_entity }
     end
   end
+end
+  
 
   # PATCH/PUT /bnbrooms/1
   # PATCH/PUT /bnbrooms/1.json
