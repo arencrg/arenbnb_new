@@ -1,0 +1,7 @@
+Users: 
+
+<% @users.each do |katauhan| %>
+<%= katauhan.full_name %> 
+<%= link_to image_tag(katauhan.avatar), user_path(katauhan)  %>
+
+<% end %>

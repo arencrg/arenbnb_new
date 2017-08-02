@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802053016) do
+ActiveRecord::Schema.define(version: 20170802100305) do
 
-# Could not dump table "bnbrooms" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "bnbrooms", force: :cascade do |t|
+    t.string   "room_name"
+    t.integer  "room_price"
+    t.string   "room_type"
+    t.text     "room_details"
+    t.integer  "bedcount"
+    t.integer  "bedroomcount"
+    t.integer  "bathroomcount"
+    t.string   "country"
+    t.string   "neighborhood"
+    t.boolean  "selfcheckin"
+    t.boolean  "tvavail"
+    t.boolean  "wifiavail"
+    t.boolean  "acavail"
+    t.boolean  "essentialsavail"
+    t.boolean  "parkingavail"
+    t.boolean  "kitchenvail"
+    t.boolean  "heatingavail"
+    t.boolean  "deskavail"
+    t.boolean  "famfriendly"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "photos"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

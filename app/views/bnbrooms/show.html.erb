@@ -108,4 +108,10 @@
 </p>
 
 <%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %> |
+
+
+    <% if @bnbroom.user == current_user %>
+    <%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %> 
+    
 <%= link_to 'Back', bnbrooms_path %>

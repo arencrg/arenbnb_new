@@ -17,4 +17,21 @@ class User < ActiveRecord::Base
     end
 end
 
+  def update_with_password(params={})
+    if params[:password].blank?
+      params.delete(:current_password)
+      self.update_without_password(params)
+    else
+      self.verify_password_and_update(params)
+    end
+  end
+
+  def update_without_password(params={})
+    params.delete(:password)
+    params.delete(:password_confirmation)
+    result = update_attributes(params)
+    clean_up_passwords
+    result
+  end
+
 end
