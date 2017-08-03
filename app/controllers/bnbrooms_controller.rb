@@ -6,6 +6,7 @@ class BnbroomsController < ApplicationController
   # GET /bnbrooms.json
   def index
     @bnbrooms = Bnbroom.all
+    @user = current_user
   end
 
   # GET /bnbrooms/1

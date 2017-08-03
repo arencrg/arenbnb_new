@@ -12,15 +12,14 @@
         <strong><%= reviewcommentrate.reviewtitle %></strong>
         <br/>
         <p><%= reviewcommentrate.comment %></p>
-        <br/>
         <% reviewcommentrate.rating.to_i.times do  %>
-              <span class="glyphicon glyphicon-star"> </span>
+              <%= image_tag("https://image.flaticon.com/icons/svg/25/25182.svg", :style => 'height: 25px;')%>
         <% end %>  
         <br/>
         </div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
         <% if reviewcommentrate.user == current_user %>
-          <%= link_to "Delete Review", bnbroom_reviewcommentrate_path(@bnbroom, reviewcommentrate), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Delete", bnbroom_reviewcommentrate_path(@bnbroom, reviewcommentrate), method: :delete, data: { confirm: "Are you sure?" } %>
         <% end %>
         </div>
     </div>

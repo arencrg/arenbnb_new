@@ -14,12 +14,21 @@
  *= require_self
  */
 
+ 
 #logo {
     height: 50px;
 }
 
 .navbar {
     height: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .slickthing img {
@@ -59,3 +68,4 @@
     li.slick-active button:before { color: #3498DB; margin-top: 1px; font-size: 10px;}
   }
 }
+
