@@ -4,9 +4,9 @@
 
 <strong>Photos:</strong>
 <div class = "slickthing">
-   <% @bnbroom.photos.each do |postphotos| %>
+   <% @bnbroom.photos.each do |bnbroomphotos| %>
   <div class = "photo">
-    <%= image_tag(postphotos) %>
+    <%= image_tag(bnbroomphotos) %>
   </div>
   <% end %>
 </div>
@@ -121,3 +121,8 @@
 <%= link_to 'Destroy', @bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 <%= link_to 'Back', bnbrooms_path %>
+
+<h2>Reviews:</h2>
+<%= render 'reviewcommentrates/showreview' %>
+<br/>
+<%= render 'reviewcommentrates/newreview' %>

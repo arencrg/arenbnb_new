@@ -8,6 +8,8 @@ Location: <%= @user.location %> <br/>
 School/Work: <%= @user.schoolwork %> <br/>
 
 My rooms: <br/>
+
    <% @user.bnbrooms.each do |postrooms| %>
-    <%= link_to postrooms.room_name, bnbroom_path(postrooms) %><br/>
+     <h4><%= @user.full_name %> has <%= @user.bnbrooms.count %> room(s) on Arenbnb:</h4>
+    <%= link_to postrooms.room_name, bnbroom_path(postrooms) %> at <%= postrooms.neighborhood%>, <%= postrooms.country%> for <%= postrooms.room_price %> per night.<br/>
   <% end %>

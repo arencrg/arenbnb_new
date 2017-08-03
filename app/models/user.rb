@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   
   has_many :bnbrooms
+  has_many :reviewcommentrates, dependent: :destroy
      
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

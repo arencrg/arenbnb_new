@@ -1,0 +1,30 @@
+<% if @bnbroom.reviewcommentrates.exists? %>
+  <% @bnbroom.reviewcommentrates.each do |reviewcommentrate| %>
+  <h4>This room has <%= @bnbroom.reviewcommentrates.count %> review(s):</h4>
+  <br/>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <p><%= reviewcommentrate.user.full_name %>
+           <%= image_tag (reviewcommentrate.user.avatar) %>
+        </p>
+      </div>
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <strong><%= reviewcommentrate.reviewtitle %></strong>
+        <br/>
+        <p><%= reviewcommentrate.comment %></p>
+        <br/>
+        <% reviewcommentrate.rating.to_i.times do  %>
+              <span class="glyphicon glyphicon-star"> </span>
+        <% end %>  
+        <br/>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <% if reviewcommentrate.user == current_user %>
+          <%= link_to "Delete Review", bnbroom_reviewcommentrate_path(@bnbroom, reviewcommentrate), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        </div>
+    </div>
+  <% end %>
+  <% else %>
+  <h3>No reviews yet!</h3>
+<% end %>
