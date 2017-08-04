@@ -14,6 +14,13 @@
  *= require_self
  */
 
+
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+
+body {
+ font-family: 'Cabin', sans-serif;
+}
  
 #logo {
     height: 50px;
@@ -67,5 +74,72 @@ a:hover {
     
     li.slick-active button:before { color: #3498DB; margin-top: 1px; font-size: 10px;}
   }
+  
+.avatarimg {
+    width: 100px;
 }
 
+.reviewcommentrate-form {
+    margin-bottom: 50px;
+}
+
+.reviewavatar {
+    width: 80px;
+}
+
+.reviewtext {
+    display: inline-block;
+    text-align: center;
+    width: 80%;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10% 10px 10%;
+}
+
+.reviewtext text-area {
+    height: 300px;
+}
+
+.reviewselect {
+    display: inline-block;
+    text-align: center;
+    width: 45%;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 3% 10px 10%;
+}
+
+.reviewbutton {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 9% 10px 2%;
+}
+
+.img-responsive {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#profiletable td {
+    padding: 10px 10px 10px 10px;
+}
+
+#indexavatar {
+    width: 50px;
+    border-radius: 50px;
+}
+
+.indivpost {
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+
+.indexphoto img {
+    height: 160px !important;
+}
+
+.showroomavatar {
+    height: 100px;
+}

@@ -1,11 +1,13 @@
+
 <div class="reviewcommentrate-form">
+    <hr>
+    <h3>Write a new review:</h3>
 <%= form_for [@bnbroom, @bnbroom.reviewcommentrates.new] do |f| %>
-<%= f.text_field :reviewtitle, placeholder: "What's on your mind?" %>
+<%= f.text_field :reviewtitle, placeholder: "What's on your mind?", class:"reviewtext", required: true %>
 <br/>
-<%= f.text_area :comment, placeholder: "Any more details?" %>
+<%= f.text_area :comment, placeholder: "Any more details?", class:"reviewtext" %>
 <br/>
-<%= f.select :rating, ['0 - It was horrible! Never going back!', '1 - Meh.', '2 - It was good, I guess.', '3 - Really good!', '4 - I loved it, it was awesome!', '5 - PLEASE LET ME LIVE HERE HUHU' ]%>
-<br/>
-<%= f.submit "Here!" %>
+<%= f.select :rating, ['0 - It was horrible! Never going back!', '1 - Meh.', '2 - It was good, I guess.', '3 - Really good!', '4 - I loved it, it was awesome!', '5 - PLEASE LET ME LIVE HERE HUHU'], {}, {:class=>"reviewselect"}%>
+<%= f.submit "Submit review", class: "reviewbutton" %>
 <% end %>
 </div>

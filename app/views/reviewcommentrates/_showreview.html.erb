@@ -1,11 +1,12 @@
+<div class = "reviewcommentrate-show">
 <% if @bnbroom.reviewcommentrates.exists? %>
   <% @bnbroom.reviewcommentrates.each do |reviewcommentrate| %>
-  <h4>This room has <%= @bnbroom.reviewcommentrates.count %> review(s):</h4>
+  <h3>This room has <%= @bnbroom.reviewcommentrates.count %> review(s):</h3>
   <br/>
     <div class="row">
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <p><%= reviewcommentrate.user.full_name %>
-           <%= image_tag (reviewcommentrate.user.avatar) %>
+        <%= image_tag avatar_url(reviewcommentrate.user), class:"reviewavatar" %>
         </p>
       </div>
       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -13,7 +14,7 @@
         <br/>
         <p><%= reviewcommentrate.comment %></p>
         <% reviewcommentrate.rating.to_i.times do  %>
-              <%= image_tag("https://image.flaticon.com/icons/svg/25/25182.svg", :style => 'height: 25px;')%>
+              <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 25px;')%>
         <% end %>  
         <br/>
         </div>
@@ -27,3 +28,4 @@
   <% else %>
   <h3>No reviews yet!</h3>
 <% end %>
+</div>

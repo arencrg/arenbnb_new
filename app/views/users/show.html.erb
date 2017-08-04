@@ -1,15 +1,42 @@
-<h3>Hello, <%= @user.full_name %>  </h3>
+<div class="row">
+    <h1>Hello, <%= @user.full_name %>  </h1>
 <br/>
-Photo: <%= image_tag (@user.avatar) %> <br/>
-Nickname: <%= @user.nickname %> <br/>
-Number: <%= @user.contact %> <br/>
-About me: <%= @user.bio %> <br/>
-Location: <%= @user.location %> <br/>
-School/Work: <%= @user.schoolwork %> <br/>
+<div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+<%= image_tag avatar_url(@user),  :class => "img-responsive" %> <br/>
+</div>
+<div class = "col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<h4>
+<table id = "profiletable">
+<tr><td><%= image_tag("https://image.flaticon.com/icons/svg/321/321817.svg", :style => 'height: 50px;') %></td> <td><%= @user.email %></td></tr>
+<tr><td><%= image_tag("https://image.flaticon.com/icons/svg/432/432667.svg", :style => 'height: 50px;') %></td><td><%= @user.contact %></td></tr>
+<tr><td><%= image_tag("https://image.flaticon.com/icons/svg/321/321822.svg", :style => 'height: 50px;') %></td><td><%= @user.bio %></td></tr>
+<tr><td><%= image_tag("https://image.flaticon.com/icons/svg/321/321754.svg", :style => 'height: 50px;') %></td><td><%= @user.location %></td></tr>
+<tr><td><%= image_tag("https://image.flaticon.com/icons/svg/265/265677.svg", :style => 'height: 50px;') %></td><td><%= @user.schoolwork %></td></tr>
+</table>
+</h4>
 
-My rooms: <br/>
+<hr>
+<%= link_to 'Edit my profile', edit_user_registration_path %>
 
-   <% @user.bnbrooms.each do |postrooms| %>
-     <h4><%= @user.full_name %> has <%= @user.bnbrooms.count %> room(s) on Arenbnb:</h4>
-    <%= link_to postrooms.room_name, bnbroom_path(postrooms) %> at <%= postrooms.neighborhood%>, <%= postrooms.country%> for <%= postrooms.room_price %> per night.<br/>
-  <% end %>
+</div>
+</div>
+<div class="row">
+<hr>
+<% if @user.bnbrooms.exists? %>
+    <h2>I have <%= @user.bnbrooms.count %> room(s) on Arenbnb:</h2>
+    <% @user.bnbrooms.each do |postrooms| %>
+    <div class = "indivpost">
+          <%= link_to image_tag(postrooms.photos[0]), @bnbroom, class:"indexphoto" %>
+          <h3><%= postrooms.room_name %></h3>
+          <p><%= postrooms.room_type %> at <%= postrooms.room_price %> per night</p>
+          <p><%= postrooms.neighborhood %>, <%= postrooms.country %></p>
+          <p><% postrooms.reviewcommentrates.average(:rating).to_i.times do %>
+              <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>
+              <% end %> <%= postrooms.reviewcommentrates.count %></p>
+    <% end %>
+    </div>
+      
+    <% else %>
+    <h2>I'm not yet a host :-( (but hopefully, soon!)</h2>
+<% end %>
+</div>

@@ -10,9 +10,9 @@
     <h4><%= @bnbroom.neighborhood%>, <%= @bnbroom.country%> | <%= @bnbroom.reviewcommentrates.count %> reviews</h4>
  
   <h4>Hosted by:</h4>
-  <%= image_tag(@bnbroom.user.avatar) %> <br/>
+  <%= image_tag avatar_url(@bnbroom.user), class:"showroomavatar" %>
   <%= @bnbroom.user.full_name %>
-  
+  <hr>
       <% if @bnbroom.user.id == current_user.id %>
       <%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %>
       <%= link_to 'Destroy', @bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>

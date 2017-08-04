@@ -1,7 +1,13 @@
-Users: 
 
+<h1>Users:</h1>
 <% @users.each do |katauhan| %>
-<%= katauhan.full_name %> 
-<%= link_to image_tag(katauhan.avatar), user_path(katauhan)  %>
-
+<div class = "row">
+    <div class = "col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <%= image_tag avatar_url(katauhan), class:"avatarimg" %>
+    </div>
+    <div class = "col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <h2><%= link_to katauhan.full_name, user_path(katauhan)%> </h2>
+    </div>
+    <hr>
+</div>
 <% end %>

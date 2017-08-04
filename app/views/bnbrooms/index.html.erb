@@ -1,38 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>Photo: <%= image_tag(current_user.avatar)%></p>
-
-<h3> Welcome back, <%= current_user.full_name%>!</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Room name</th>
-      <th>Room price</th>
-      <th>Room type</th>
-      <th>Location</th>
-      <th>Average Rating</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bnbrooms.each do |bnbroom| %>
-      <tr>
-        <td><%= bnbroom.room_name %></td>
-        <td><%= bnbroom.room_price %></td>
-        <td><%= bnbroom.room_type %></td>
-        <td><%= bnbroom.neighborhood %>, <%= bnbroom.country %></td>
-        <td><%= bnbroom.reviewcommentrates.average(:rating) %> </td>
-        <td><%= link_to 'Show', bnbroom %></td>
-        <% if bnbroom.user.id == current_user.id %>
-        <td><%= link_to 'Edit', edit_bnbroom_path(bnbroom) %></td>
-        <td><%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<h3>Welcome back, <%= current_user.full_name%>! | <%= image_tag avatar_url(current_user), id:"indexavatar" %> </h3>
 
 <%= link_to 'New Bnbroom', new_bnbroom_path %>
+
+<hr>
+<% @bnbrooms.each do |bnbroom| %>
+<div class = "indivpost">
+  <%= link_to image_tag(bnbroom.photos[0]), bnbroom, class:"indexphoto" %>
+  <h3><%= bnbroom.room_name %></h3>
+  <p><%= bnbroom.room_type %> at <%= bnbroom.room_price %> per night</p>
+  <p><%= bnbroom.neighborhood %>, <%= bnbroom.country %></p>
+  <p><% bnbroom.reviewcommentrates.average(:rating).to_i.times do %>
+         <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>
+     <% end %> <%= bnbroom.reviewcommentrates.count %></p>
+
+        <% if bnbroom.user.id == current_user.id %>
+        <%= link_to 'Edit', edit_bnbroom_path(bnbroom) %> | <%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+</div>
+<% end %>
+
