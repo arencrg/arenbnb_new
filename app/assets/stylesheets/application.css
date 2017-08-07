@@ -22,20 +22,80 @@ body {
  font-family: 'Cabin', sans-serif;
 }
  
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    background-color: white;
+}
+
+.navbar-link img {
+    width: 30px;
+    border-radius: 50px;
+    padding: 0 0 0 0;
+}
+
+.navbar li:hover, a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid black;
+    background-color: white;
+}
+
 #logo {
     height: 50px;
 }
 
-.navbar {
-    height: 60px;
+#logo a:hover, li:hover {
+    text-decoration: none;
+    border:none !important;
+    background-color: white;
 }
 
-a {
-    text-decoration: none;
+#searchfix {
+    position: fixed;
+    top: 50px;
+    height: 55px;
+    padding: 10px 10px 20px 10px;
+    background-color: white;
+    z-index: 99;
+    width: 70%;
 }
 
-a:hover {
-    text-decoration: none;
+#searchbar {
+    width: 70%;
+    padding: 5px 5px 5px 5px;
+    margin: 0 0 0 0;
+}
+
+#searchbtn {
+    width: 20%;
+    padding: 5px 5px 5px 5px;
+    margin: 0 10px 0 10px;
+}
+
+.indivpost {
+    display: inline-block;
+    width: 30%;
+    float: left;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+
+.indexphoto img {
+    text-align: center;
+    height: 160px;
+    overflow: hidden;
+}
+
+.showroomavatar {
+    height: 100px;
+}
+
+.indexmap {
+    position:fixed;
+    overflow: hidden;
+    right: 10px;
+    top: 120px;
 }
 
 .slickthing {
@@ -102,7 +162,7 @@ a:hover {
 .reviewtext {
     display: inline-block;
     text-align: center;
-    width: 80%;
+    width: 100%;
     padding: 10px 10px 10px 10px;
     margin: 10px 10% 10px 10%;
 }
@@ -137,29 +197,142 @@ a:hover {
     padding: 10px 10px 10px 10px;
 }
 
-#indexavatar {
-    width: 50px;
+.profphoto {
+    width: 100%;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    
+.container {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    max-width: 100%;
+}
+    
+    
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    max-width: 100%;
+    background-color: white;
+    z-index: 100;
+}
+
+.navbar-link img {
+    width: 30px;
     border-radius: 50px;
+    padding: 0 0 0 0;
 }
 
+.navbar li:hover, a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid black;
+    background-color: white;
+}
+
+.navbar-header {
+    height: 100%;
+    background: white;
+    width: 100%;
+    text-align: right;
+}
+
+.navbar-collapse{
+    background: none repeat scroll 0 0 #FFFFFF;
+    position: relative;
+    z-index: 99999;
+}
+
+#logo {
+    height: 50px;
+}
+
+#logo a:hover, li:hover {
+    text-decoration: none;
+    border:none !important;
+    background-color: white;
+}
+
+#searchfix {
+    background: none repeat scroll 0 0 #FFFFFF;
+    z-index: 80;
+    display: inline-block;
+    text-align: center;
+    top: 60px;
+    height: 60px;
+    padding: 10px 0 10px 0;
+    width: 95%;
+}
+
+#searchbar {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    margin: 10px 10px 0 10px;
+}
+
+#searchbtn {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    margin: 10px 10px 0 10px;
+}
+    
+#mapcol div {
+    display: none !important;
+}
+
+#respondmobile {
+    max-width: 100%;
+}
+
+.indexmap {
+    display: none !important;
+}
+    
 .indivpost {
-    width: 30%;
-    float: left;
+    width: 100%;
+    height: auto;
     padding: 10px 10px 10px 10px;
-    margin: 10px 10px 10px 10px;
+    margin: 50px 0 0 0;
 }
-
+    
 .indexphoto img {
-    height: 160px !important;
+    max-width: 100%;
+    height: auto;
 }
 
-.showroomavatar {
-    height: 100px;
+#showprofphoto img {
+    max-height: 200px !important;
 }
 
-#newroom img {
-    width: 50px !important;
-    margin-left: 66%;
-    right: 0;
-    margin-top: 10%;
+.slickthing {
+    margin-top: 50px;
+}
+#showroommap {
+    margin-top: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#reviewmobile {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0 2% 0 2%;
+}
+
+.reviewtext, .reviewselect {
+     width: 90%;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 5% 5px 5%;
+}
+
+#nearby {
+    padding: 10px 20px 10px 20px;
+}
+
 }

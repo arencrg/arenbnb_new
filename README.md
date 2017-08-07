@@ -11,3 +11,5 @@ Here's take two.
 - 03 Aug 2017 -- I now have the review system up and running! I wasn't able to do much today either, but I think I'm making pretty good time considering I only wrote code for like, an hour today hahahahaha tbf I worked on this for around two hours before bed, and I managed to get the profiles up and running, so that's good.
 
 - 04 Aug 2017 -- More styling, more cute little images. I've managed to set a default img for users without a Facebook account, however I find that uploading your own avatar fucks up those who have Facebook Omniauth, so I haven't changed that part yet, might not do it until I absolutely have to. Today I worked mostly on designing the indexes (for the bnbrooms and the users) but I've yet to redesign the Devise views. Might just make a boring old standardized design for all those forms. I plan to adding maps later today tho.
+
+- 07 Aug 2017 -- I installed the Geocoder gem to add maps to my app. So far, things are looking good! I plan to add more styling, fix the rows and columns, maybe make the index map stick? Not sure what I'm gonna do with that yet, but let's see!

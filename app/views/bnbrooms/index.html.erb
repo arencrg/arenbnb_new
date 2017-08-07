@@ -1,48 +1,48 @@
 <p id="notice"><%= notice %></p>
 
+<div class = "row" id="searchfix">
+    <%= form_tag bnbrooms_path, :method => :get do %>
+      <p>
+        <%= text_field_tag :search, params[:search], :id => "searchbar" %>
+        <%= submit_tag "Search", :name => nil , :id => "searchbtn" %>
+      </p>
+    <% end %>
+
+</div>
+
+
+
+<br/>
+<br/>
+<br/>
+
 <div class = "row">
-<div class = "col-xs-10 col-sm-10 col-md-10 col-lg-10">
-<h3>Welcome back, <%= current_user.full_name%>! | <%= image_tag avatar_url(current_user), id:"indexavatar" %> </h3>
-</div>
-<div class = "col-xs-2 col-sm-2 col-md-2 col-lg-2">
-<%= link_to image_tag("https://image.flaticon.com/icons/svg/149/149954.svg"), new_bnbroom_path, id:"newroom" %>
-</div>
-</div>
 
-<%= form_tag bnbrooms_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
-  </p>
-<% end %>
-
-<hr>
-<div class = "row">
-
-<div class = "col-xs-8 col-sm-8 col-md-8 col-lg-8">
-<% @bnbrooms.each do |bnbroom| %>
-<div class = "indivpost">
-  <%= link_to image_tag(bnbroom.photos[0]), bnbroom, class:"indexphoto" %>
-  <h3><%= bnbroom.room_name %></h3>
-  <p><%= bnbroom.room_type %> at <%= bnbroom.room_price %> per night</p>
-  <p><span class="glyphicon glyphicon-map-marker"></span> <%= bnbroom.neighborhood %></p>
-  <p><% bnbroom.reviewcommentrates.average(:rating).to_i.times do %>
-        <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>  <% end %> 
-     <%= bnbroom.reviewcommentrates.count %> review(s)</p>
-
-        <% if bnbroom.user.id == current_user.id %>
-        <%= link_to 'Edit', edit_bnbroom_path(bnbroom) %> | <%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-</div>
-<% end %>
+<div class = "col-xs-12 col-sm-12 col-md-8 col-lg-8" id="respondmobile">
+  <% @bnbrooms.each do |bnbroom| %>
+      <div class = "indivpost">
+        <%= link_to image_tag(bnbroom.photos[0]), bnbroom, class:"indexphoto" %>
+        <h3><%= bnbroom.room_name %></h3>
+        <p><%= bnbroom.room_type %> at <%= bnbroom.room_price %> per night</p>
+        <p><span class="glyphicon glyphicon-map-marker"></span> <%= bnbroom.neighborhood %></p>
+        <p><% bnbroom.reviewcommentrates.average(:rating).to_i.times do %>
+              <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>  <% end %> 
+           <%= bnbroom.reviewcommentrates.count %> review(s)</p>
+      
+              <% if bnbroom.user.id == current_user.id %>
+              <%= link_to 'Edit', edit_bnbroom_path(bnbroom) %> | <%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+      </div>
+  <% end %>
 </div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-  <% my_url = "http://maps.google.com/maps/api/staticmap?size=450x350&sensor=false&zoom=14" %>
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id:"mapcol">
+  <% my_url = "http://maps.google.com/maps/api/staticmap?size=400x500&sensor=false&zoom=14" %>
   <% @bnbrooms.each do |bnbroom| %>
   <% my_url += "&markers=#{bnbroom.latitude}%2C#{bnbroom.longitude}" %>    
   <% end %>
-  <%= image_tag my_url %>
+  <%= image_tag my_url , class:'indexmap' %>
 </div>
+  
 
 </div>

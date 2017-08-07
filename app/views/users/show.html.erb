@@ -1,10 +1,10 @@
 <div class="row">
     <h1>Hello, <%= @user.full_name %>  </h1>
 <br/>
-<div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+<div class = "col-xs-12 col-sm-12 col-md-3 col-lg-3">
 <%= image_tag avatar_url(@user),  :class => "img-responsive" %> <br/>
 </div>
-<div class = "col-xs-9 col-sm-9 col-md-9 col-lg-9">
+<div class = "col-xs-12 col-sm-12 col-md-9 col-lg-9">
 <h4>
 <table id = "profiletable">
 <tr><td><%= image_tag("https://image.flaticon.com/icons/svg/321/321817.svg", :style => 'height: 50px;') %></td> <td><%= @user.email %></td></tr>
@@ -20,6 +20,8 @@
 
 </div>
 </div>
+
+
 <div class="row">
 <hr>
 <% if @user.bnbrooms.exists? %>
@@ -29,14 +31,14 @@
           <%= link_to image_tag(postrooms.photos[0]), postrooms, class:"indexphoto" %>
           <h3><%= postrooms.room_name %></h3>
           <p><%= postrooms.room_type %> at <%= postrooms.room_price %> per night</p>
-          <p><%= postrooms.neighborhood %>, <%= postrooms.country %></p>
+          <p><%= postrooms.neighborhood %></p>
           <p><% postrooms.reviewcommentrates.average(:rating).to_i.times do %>
               <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>
-              <% end %> <%= postrooms.reviewcommentrates.count %></p>
-    <% end %>
+              <% end %>
     </div>
-      
+    <% end %>  
+    
     <% else %>
     <h2>I'm not yet a host :-( (but hopefully, soon!)</h2>
-<% end %>
+    <% end %>
 </div>
