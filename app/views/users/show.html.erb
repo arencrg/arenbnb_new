@@ -26,7 +26,7 @@
     <h2>I have <%= @user.bnbrooms.count %> room(s) on Arenbnb:</h2>
     <% @user.bnbrooms.each do |postrooms| %>
     <div class = "indivpost">
-          <%= link_to image_tag(postrooms.photos[0]), @bnbroom, class:"indexphoto" %>
+          <%= link_to image_tag(postrooms.photos[0]), postrooms, class:"indexphoto" %>
           <h3><%= postrooms.room_name %></h3>
           <p><%= postrooms.room_type %> at <%= postrooms.room_price %> per night</p>
           <p><%= postrooms.neighborhood %>, <%= postrooms.country %></p>

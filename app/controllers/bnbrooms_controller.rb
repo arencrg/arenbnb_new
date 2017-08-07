@@ -5,9 +5,13 @@ class BnbroomsController < ApplicationController
   # GET /bnbrooms
   # GET /bnbrooms.json
   def index
-    @bnbrooms = Bnbroom.all
     @user = current_user
-  end
+    if params[:search].present?
+      @bnbrooms = Bnbroom.near(params[:search], 50, :order => 'distance', :units => :km)
+    else
+      @bnbrooms = Bnbroom.all
+    end
+  end  
 
   # GET /bnbrooms/1
   # GET /bnbrooms/1.json
@@ -73,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bnbroom_params
-      params.require(:bnbroom).permit(:room_name, :room_price, :room_type, :room_details, :bedcount, :bedroomcount, :bathroomcount, :country, :neighborhood, :selfcheckin, :tvavail, :wifiavail, :acavail, :essentialsavail, :parkingavail, :kitchenvail, :heatingavail, :deskavail, :famfriendly, {photos:[]})
+      params.require(:bnbroom).permit(:room_name, :room_price, :room_type, :room_details, :bedcount, :bedroomcount, :bathroomcount, :neighborhood, :selfcheckin, :tvavail, :wifiavail, :acavail, :essentialsavail, :parkingavail, :kitchenvail, :heatingavail, :deskavail, :famfriendly, {photos:[]})
     end
 end

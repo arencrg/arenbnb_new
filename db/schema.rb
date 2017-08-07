@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170803100842) do
     t.integer  "bedcount"
     t.integer  "bedroomcount"
     t.integer  "bathroomcount"
-    t.string   "country"
     t.string   "neighborhood"
     t.boolean  "selfcheckin"
     t.boolean  "tvavail"
@@ -33,6 +32,8 @@ ActiveRecord::Schema.define(version: 20170803100842) do
     t.boolean  "heatingavail"
     t.boolean  "deskavail"
     t.boolean  "famfriendly"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "photos"

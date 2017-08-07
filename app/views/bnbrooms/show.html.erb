@@ -7,7 +7,7 @@
   
   <h1><%= @bnbroom.room_name %></h1>
   <h2><%= @bnbroom.room_price %> per night</h2>
-    <h4><%= @bnbroom.neighborhood%>, <%= @bnbroom.country%> | <%= @bnbroom.reviewcommentrates.count %> reviews</h4>
+    <h4><%= @bnbroom.neighborhood%> | <%= @bnbroom.reviewcommentrates.count %> reviews</h4>
  
   <h4>Hosted by:</h4>
   <%= image_tag avatar_url(@bnbroom.user), class:"showroomavatar" %>
@@ -20,7 +20,6 @@
 
 </div>
 <div class ="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-<h2>Photos:</h2>
 <div class = "slickthing">
    <% @bnbroom.photos.each do |bnbroomphotos| %>
   <div class = "photo">
@@ -33,6 +32,7 @@
 
 <div class="row">
 <hr>
+<div class = "col-xs-5 col-sm-5 col-md-5 col-lg-5">
 <h2>About the space:</h2>
 <br/>
   <strong>Room type:</strong>
@@ -51,9 +51,12 @@
   <%= @bnbroom.bathroomcount %>
 <br/>
   <strong>Address:</strong>
-  <%= @bnbroom.neighborhood %>, <%= @bnbroom.country %>
+  <%= @bnbroom.neighborhood %>
 </div>
-
+<div class = "col-xs-7 col-sm-7 col-md-7 col-lg-7">
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bnbroom.latitude}%2C#{@bnbroom.longitude}" %>
+</div>
+</div>
 <div class = "row">
   <hr>
   <h3>Amenities/Notes:</h3>
@@ -128,4 +131,13 @@ The space isn't family-friendly.
 <br/>
 <%= render 'reviewcommentrates/newreview' %>
 </div>
+</div>
+
+<div class="row">
+<h3>Nearby rooms</h3>
+<ul>
+<% for bnbroom in @bnbroom.nearbys(10) %>
+  <li><%= link_to bnbroom.neighborhood, bnbroom %> (<%= bnbroom.distance.round(2) %> km)</li>
+<% end %>
+</ul>
 </div>

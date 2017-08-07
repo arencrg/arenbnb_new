@@ -14,9 +14,9 @@
  *= require_self
  */
 
-
 @import url('https://fonts.googleapis.com/css?family=Cabin');
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/fonts/slick.ttf');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.6/fonts/slick.woff');
 
 body {
  font-family: 'Cabin', sans-serif;
@@ -38,41 +38,52 @@ a:hover {
     text-decoration: none;
 }
 
-.slickthing img {
-    height: 200px;
+.slickthing {
+    background-color: black;
+    font-family: 'Slick';
 }
 
-  .slickthing .slick-prev { left: 0; }
-  .slickthing  .slick-next { right: 0; }
-  
-   .slickthing .slick-prev,  .slickthing .slick-next {
-    background-color: rgba(0, 0, 0, 0);
-    top: 10px;
-    width: 20%;
+.slickthing img {
+    height: 360px;
+    margin: 20px 60px 20px 60px;
+}
+
+.slick-prev {
+    left: 10% !important;
+    top: 50%;
+    width: 15%;
     height: 100%;
-    transition: all 0.3s ease-out 0s;
-    
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.25);
-      
-      &:before { color: rgba(255, 255, 255, 0.65); }
-    }
-    
-    &:before {
-      font-size: 38px;
-      color: rgba(0,0,0,0);
-      transition: all 0.3s ease-out;
-    }
-  }
-  
-   .slickthing .slick-dots {
+    z-index: 99;
+    font-size: 50px !important;
+    position: absolute;
+    background-color: #fd5c63;
+    color: #fd5c63;
+}
+.slick-prev.active, .slick-next.active {
+     background-color: #fd5c63;
+     position: absolute;
+     top: 50%;
+}
+
+.slick-next { 
+    right: 10% !important; 
+    top: 50%;
+    width: 15%;
+    height: 100%;
+    z-index: 100;
+    font-size: 50px;
+    position: absolute;
+    background-color: #fd5c63;
+    color: #fd5c63;
+}
+
+.slick-dots {
+    display: inline-block;
+    text-align: center;
     width: 22%;
-    left: 40%;
-    bottom: -68px;
-    border-bottom: 1px solid #3498DB;
+    bottom: 10%;
+    color: black;
     padding: 15px 0;
-    
-    li.slick-active button:before { color: #3498DB; margin-top: 1px; font-size: 10px;}
   }
   
 .avatarimg {
@@ -80,6 +91,7 @@ a:hover {
 }
 
 .reviewcommentrate-form {
+    clear: both;
     margin-bottom: 50px;
 }
 
@@ -131,6 +143,7 @@ a:hover {
 }
 
 .indivpost {
+    width: 30%;
     float: left;
     padding: 10px 10px 10px 10px;
     margin: 10px 10px 10px 10px;
@@ -142,4 +155,11 @@ a:hover {
 
 .showroomavatar {
     height: 100px;
+}
+
+#newroom img {
+    width: 50px !important;
+    margin-left: 66%;
+    right: 0;
+    margin-top: 10%;
 }
