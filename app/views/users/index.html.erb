@@ -2,14 +2,14 @@
 
 <% @users.each do |katauhan| %>
 <div class = "indivpost">
-  <%= link_to image_tag(avatar_url(katauhan)), user_path(katauhan), :id => "showprofphoto" %>
+  <%= link_to image_tag(avatar_url(katauhan)), user_path(katauhan), id:"showprofphoto" %>
   <h3><%= link_to katauhan.full_name, user_path(katauhan) %></h3>
   
   <% if katauhan.bnbrooms.exists? %>
     <h4><%= katauhan.bnbrooms.count %> room(s) on Arenbnb</h4>
   <% else %>
      <h2>No rooms yet!</h2>
-    <% end %>
+  <% end %>
 </div>
 <% end %>
 

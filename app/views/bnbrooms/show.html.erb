@@ -135,9 +135,16 @@ The space isn't family-friendly.
 
 <div class="row" id="nearby">
 <h3>Nearby rooms</h3>
-<ul>
+
 <% for bnbroom in @bnbroom.nearbys(10) %>
-  <li><%= link_to bnbroom.neighborhood, bnbroom %> (<%= bnbroom.distance.round(2) %> km)</li>
-<% end %>
-</ul>
+<div class="minis">
+  <%= link_to image_tag(bnbroom.photos[0]), bnbroom %> <br/>
+  <%= link_to bnbroom.room_name, bnbroom %> <br/>
+  <%= bnbroom.neighborhood %> <br/>
+  <%= bnbroom.distance.round(2) %> km away
 </div>
+<% end %>
+
+</div>
+
+<br/> <br/> <br/> <br/>

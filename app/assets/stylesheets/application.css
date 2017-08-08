@@ -21,12 +21,17 @@
 body {
  font-family: 'Cabin', sans-serif;
 }
+
+.container {
+    width: 100%;
+}
  
 .navbar {
     position: fixed;
     top: 0;
     height: 60px;
     background-color: white;
+    width: 100%;
 }
 
 .navbar-link img {
@@ -151,7 +156,7 @@ body {
 }
 
 .reviewcommentrate-form {
-    clear: both;
+    width: 80%;
     margin-bottom: 50px;
 }
 
@@ -174,23 +179,27 @@ body {
 .reviewselect {
     display: inline-block;
     text-align: center;
-    width: 45%;
+    width: 50%;
     padding: 10px 10px 10px 10px;
-    margin: 10px 3% 10px 10%;
+    margin: 10px 3% 10px 19%;
 }
 
 .reviewbutton {
     display: inline-block;
     text-align: center;
-    width: 30%;
+    width: 23%;
     padding: 10px 10px 10px 10px;
-    margin: 10px 9% 10px 2%;
+    margin: 10px 0 10px 2%;
 }
 
 .img-responsive {
     display: inline-block;
     text-align: center;
     width: 100%;
+}
+
+#showprofphoto img {
+    max-height: 200px !important;
 }
 
 #profiletable td {
@@ -201,8 +210,20 @@ body {
     width: 100%;
 }
 
+.nearby {
+    bottom: 100px;
+}
 
+.minis {
+    width: 18%;
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
 
+.minis img {
+    margin: 0 10% 10px 10%;
+    height: 100px;
+}
 
 @media only screen and (max-width: 768px) {
     

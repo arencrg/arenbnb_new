@@ -52,9 +52,6 @@ group :development do
   gem 'spring'
 end
 
-ruby '2.3.0'
-
-
 # gems for the app itself
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
