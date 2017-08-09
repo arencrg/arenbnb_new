@@ -13,3 +13,7 @@ Here's take two.
 - 04 Aug 2017 -- More styling, more cute little images. I've managed to set a default img for users without a Facebook account, however I find that uploading your own avatar fucks up those who have Facebook Omniauth, so I haven't changed that part yet, might not do it until I absolutely have to. Today I worked mostly on designing the indexes (for the bnbrooms and the users) but I've yet to redesign the Devise views. Might just make a boring old standardized design for all those forms. I plan to adding maps later today tho.
 
 - 07 Aug 2017 -- I installed the Geocoder gem to add maps to my app. So far, things are looking good! I plan to add more styling, fix the rows and columns, maybe make the index map stick? Not sure what I'm gonna do with that yet, but let's see!
+
+- 08 Aug 2017 -- Not much progress today. It was a long-overdue rest day.
+
+- 09 Aug 2017 -- I've been able to finish a lot, I think! Even without a real messaging platform, I've been able to make do with a robust reservation system. I decided to just put the user's own rooms and the rooms he plans to book all in one page (his user profile) instead of making separate pages. I feel like I should have some sort of navbar or tabs thing? Maybe a little bit of smooth scrolling too. Hmm. Anyway, I managed to add a little bit more styling here and there. Looks like the payment system (PayPal?) will have to be for tomorrow.
