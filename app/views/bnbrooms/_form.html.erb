@@ -14,75 +14,75 @@
   <%= f.file_field :photos, multiple: true %>
   
   <div class="field">
-    <%= f.label :room_name %><br>
+    <%= f.label :room_name, "What do you call this place?" %><br>
     <%= f.text_field :room_name %>
   </div>
   <div class="field">
-    <%= f.label :room_price %><br>
+    <%= f.label :room_price, "How much is it per night?" %><br>
     <%= f.number_field :room_price %>
   </div>
   <div class="field">
-    <%= f.label :room_type %><br>
+    <%= f.label :room_type, "What type of room is this?" %><br>
     <%= f.select :room_type, ['Entire Home', 'Private Room', 'Shared Room']%>
   </div>
   <div class="field">
-    <%= f.label :room_details %><br>
+    <%= f.label :room_details, "What can you say about the room?" %><br>
     <%= f.text_area :room_details %>
   </div>
   <div class="field">
-    <%= f.label :bedcount %><br>
+    <%= f.label :bedcount, "How many beds are there?" %><br>
     <%= f.number_field :bedcount %>
   </div>
   <div class="field">
-    <%= f.label :bedroomcount %><br>
+    <%= f.label :bedroomcount, "How many bedrooms are there?" %><br>
     <%= f.number_field :bedroomcount %>
   </div>
   <div class="field">
-    <%= f.label :bathroomcount %><br>
+    <%= f.label :bathroomcount, "How many bathrooms are there?" %><br>
     <%= f.number_field :bathroomcount %>
   </div>
   <div class="field">
-    <%= f.label :neighborhood %><br>
+    <%= f.label :neighborhood, "What is the complete address?" %><br>
     <%= f.text_field :neighborhood %>
   </div>
   <div class="field">
-    <%= f.label :selfcheckin %><br>
+    <%= f.label :selfcheckin, "Can we check in by ourselves?" %><br>
     <%= f.check_box :selfcheckin %>
   </div>
   <div class="field">
-    <%= f.label :tvavail %><br>
+    <%= f.label :tvavail, "Is there cable TV?" %><br>
     <%= f.check_box :tvavail %>
   </div>
   <div class="field">
-    <%= f.label :wifiavail %><br>
+    <%= f.label :wifiavail, "Is there wifi?" %><br>
     <%= f.check_box :wifiavail %>
   </div>
   <div class="field">
-    <%= f.label :acavail %><br>
+    <%= f.label :acavail, "Is there AC?" %><br>
     <%= f.check_box :acavail %>
   </div>
   <div class="field">
-    <%= f.label :essentialsavail %><br>
+    <%= f.label :essentialsavail, "Will you provide toiletries like towels or bathroom essentials?" %><br>
     <%= f.check_box :essentialsavail %>
   </div>
   <div class="field">
-    <%= f.label :parkingavail %><br>
+    <%= f.label :parkingavail, "Is there a reserved parking slot?" %><br>
     <%= f.check_box :parkingavail %>
   </div>
   <div class="field">
-    <%= f.label :kitchenvail %><br>
+    <%= f.label :kitchenvail, "Is there a kitchen we can user?" %><br>
     <%= f.check_box :kitchenvail %>
   </div>
   <div class="field">
-    <%= f.label :heatingavail %><br>
+    <%= f.label :heatingavail, "Is there heating?" %><br>
     <%= f.check_box :heatingavail %>
   </div>
   <div class="field">
-    <%= f.label :deskavail %><br>
+    <%= f.label :deskavail, "Is there a workdesk available?" %><br>
     <%= f.check_box :deskavail %>
   </div>
   <div class="field">
-    <%= f.label :famfriendly %><br>
+    <%= f.label :famfriendly, "Is the place family friendly?" %><br>
     <%= f.check_box :famfriendly %>
   </div>
   <div class="actions">

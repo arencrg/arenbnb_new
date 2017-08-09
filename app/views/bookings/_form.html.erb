@@ -1,0 +1,25 @@
+<%= form_for(Booking.new) do |f| %>
+  <%= @bnbroom.room_price %> per night | <%= f.label :startdate %> <%= f.date_select :startdate %>  | <%= f.label :enddate %>  <%= f.date_select :enddate %> | <%= f.submit "Book Now" %>
+ 
+<%= f.hidden_field :bnbroom_id, value: @bnbroom.id %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :nightprice, value: @bnbroom.room_price %>
+<%= f.hidden_field :totalprice %>
+<% end %>
+
+<script>
+$('#new_booking select').on('change',function(){
+y1 = $('#booking_startdate_1i').val()
+y2 = $('#booking_enddate_1i').val()
+m1 = $('#booking_startdate_2i').val()
+m2 = $('#booking_enddate_2i').val()
+d1 = $('#booking_startdate_3i').val()
+d2 = $('#booking_enddate_3i').val()
+var date2 = new Date(y1, m1, d1);
+var date1 = new Date(y2, m2, d2);
+
+var diff = date1 - date2;
+var days = diff / 1000 / 60 / 60 / 24;
+$('#booking_totalprice').val(days*$('#booking_nightprice').val())
+});
+</script>

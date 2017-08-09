@@ -15,8 +15,10 @@
 </table>
 </h4>
 
-<hr>
-<%= link_to 'Edit my profile', edit_user_registration_path %>
+    <% if @user.id == current_user.id %>
+    <hr>
+      <%= link_to 'Edit my profile', edit_user_registration_path %>
+    <% end %>
 
 </div>
 </div>
@@ -42,3 +44,26 @@
     <h2>I'm not yet a host :-( (but hopefully, soon!)</h2>
     <% end %>
 </div>
+
+ <% if @user.id == current_user.id %>
+<div class ="row">
+    
+    <% if @user.bookings.exists? %>
+    <h2>I have <%= @user.bookings.count %> booking(s) on Arenbnb:</h2>
+    
+    <% @user.bookings.each do |booking| %>
+      
+       Room: <%= booking.bnbroom.room_name %> at  <%= booking.totalprice %> <br/>
+       Dates: <%= booking.startdate %> to <%= booking.enddate %> <br/> 
+       <%= link_to 'Show', booking %>
+       <%= link_to 'Edit', edit_booking_path(booking) %>
+       <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <br/>
+    <% end %>
+    
+    <% else %>
+    <h2>I haven't booked anything yet!</h2>
+    <% end %>
+
+</div>
+<% end %>

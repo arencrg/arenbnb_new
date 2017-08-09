@@ -30,4 +30,5 @@ $(document).ready(function(){
     variableWidth: true,
     lazyLoad: true,
   });
+
 });

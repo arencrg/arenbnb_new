@@ -225,6 +225,14 @@ body {
     height: 100px;
 }
 
+.navbar-fixed-bottom {
+    z-index: 99;
+    height: 50px;
+    background: #fd5c63;
+}
+
+
+
 @media only screen and (max-width: 768px) {
     
 .container {

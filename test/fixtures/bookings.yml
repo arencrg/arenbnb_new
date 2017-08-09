@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_id: 1
+  user_id: 
+  bnbroom_id: 
+  startdate: 2017-08-09
+  enddate: 2017-08-09
+  totalprice: 1
+
+two:
+  booking_id: 1
+  user_id: 
+  bnbroom_id: 
+  startdate: 2017-08-09
+  enddate: 2017-08-09
+  totalprice: 1

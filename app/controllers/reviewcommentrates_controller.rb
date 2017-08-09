@@ -14,7 +14,6 @@ def create
       render 'reviewcommentrate/newreview'
   end
   
-  
 end
 
 
