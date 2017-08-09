@@ -379,18 +379,68 @@ body {
     width: 100%;
     display: inline-block;
     text-align: center;
-    padding: 0 2% 0 2%;
 }
 
 .reviewtext, .reviewselect {
-     width: 90%;
+    width: 100%;
     display: inline-block;
     text-align: center;
-    margin: 5px 5% 5px 5%;
 }
 
 #nearby {
     padding: 10px 20px 10px 20px;
+    margin-bottom: 150px;
 }
 
+.minis {
+    width: 40%;
+    float: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.minis img {
+    margin: 0 10% 10px 10%;
+    height: 80px;
+}
+
+.navbar-fixed-bottom {
+    z-index: 99;
+    height: 23%;
+    background: #fd5c63;
+    padding: 10px 10px 10px 10px;
+}
+
+#price {
+    color: white;
+    font-size: 18px;
+    padding: 2px 0 5px 0;
+    text-align: center;
+}
+
+#dates {
+    text-align: left;
+    font-size: 14px;
+}
+.checkout, .checkin {
+    margin: 0 10px 10 10px;
+}
+.bookbutton {
+    width: 140px;
+    background: white;
+    color: #fd5c63;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 5px 12px 5px 12px;
+    margin: 10px 30% 0 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+#dates date-select {
+    padding: 2px 5px 2px 5px;
+}
+#hello {
+    text-align: center;
+    margin: 10px 10% 10px 10%;
+}
 }
