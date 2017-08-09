@@ -34,12 +34,24 @@
           <h3><%= postrooms.room_name %></h3>
           <p><%= postrooms.room_type %> at <%= postrooms.room_price %> per night</p>
           <p><%= postrooms.neighborhood %></p>
-          <p><% postrooms.reviewcommentrates.average(:rating).to_i.times do %>
-              <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>
-              <% end %>
+              <br/>
+              <%= @bookings.where("bnbroom_id = #{ postrooms.id}").count %> people have reserved this room.
+              <% if postrooms.bookings.exists? %>
+                <% postrooms.bookings.each do |showreservations| %>
+                <ul>
+                    <li><%= link_to showreservations.user.full_name, user_path(showreservations.user) %> <br/>                Dates: <%= showreservations.startdate %> to <%= showreservations.enddate %> <br/>
+                        To pay:  <%= showreservations.totalprice %> <br/>
+                        Payment status: idk yet
+                    </li>
+                </ul>
+
+<% end %>
+  <% end %>
+    
+              
     </div>
     <% end %>  
-    
+
     <% else %>
     <h2>I'm not yet a host :-( (but hopefully, soon!)</h2>
     <% end %>
@@ -49,16 +61,19 @@
 <div class ="row">
     
     <% if @user.bookings.exists? %>
+    <hr>
     <h2>I have <%= @user.bookings.count %> booking(s) on Arenbnb:</h2>
     
-    <% @user.bookings.each do |booking| %>
-      
-       Room: <%= booking.bnbroom.room_name %> at  <%= booking.totalprice %> <br/>
-       Dates: <%= booking.startdate %> to <%= booking.enddate %> <br/> 
-       <%= link_to 'Show', booking %>
-       <%= link_to 'Edit', edit_booking_path(booking) %>
-       <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% @user.bookings.each do |mybooking| %>
+    <div class = "indivpost">
+          <%= link_to image_tag(mybooking.bnbroom.photos[0]), mybooking.bnbroom, class:"indexphoto" %>
+          <h3><%= mybooking.bnbroom.room_name %></h3>
+          <p><%= mybooking.bnbroom.room_type %> for <%= mybooking.totalprice %></p>
+          <p><%= mybooking.bnbroom.neighborhood %></p>
+          <h4><%= mybooking.startdate %> to <%= mybooking.enddate %></h4>
+       <%= link_to 'Destroy', mybooking, method: :delete, data: { confirm: 'Are you sure?' } %>
        <br/>
+    </div>
     <% end %>
     
     <% else %>
@@ -67,3 +82,4 @@
 
 </div>
 <% end %>
+

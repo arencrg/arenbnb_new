@@ -226,12 +226,41 @@ body {
 }
 
 .navbar-fixed-bottom {
+    display: inline-block;
+    text-align: center;
     z-index: 99;
-    height: 50px;
+    height: 55px;
     background: #fd5c63;
+    padding: 10px 40px 10px 40px;
 }
 
+#price {
+    color: white;
+    font-size: 22px;
+    padding-top: 3px;
+    text-align: right;
+}
 
+#dates {
+    font-size: 16px;
+}
+.checkout, .checkin {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.bookbutton {
+    width: 140px;
+    background: white;
+    color: #fd5c63;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 5px 12px 5px 12px;
+    margin-left: 30px;
+}
+
+#dates date-select {
+    padding: 2px 5px 2px 5px;
+}
 
 @media only screen and (max-width: 768px) {
     

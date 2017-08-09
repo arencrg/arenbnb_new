@@ -16,6 +16,7 @@ class BnbroomsController < ApplicationController
   # GET /bnbrooms/1
   # GET /bnbrooms/1.json
   def show
+    @bookings = Booking.all
   end
 
   # GET /bnbrooms/new

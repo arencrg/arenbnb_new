@@ -1,37 +1,43 @@
-<p id="notice"><%= notice %>
+<p id="notice"><%= notice %> 
 <div class = "container">
 <%= link_to 'Back', bnbrooms_path %>
 
 <div class ="row">
+  
 <div class ="col-xs-12 col-sm-12 col-md-4 col-lg-4">
   
   <h1><%= @bnbroom.room_name %></h1>
   <h2><%= @bnbroom.room_price %> per night</h2>
-    <h4><%= @bnbroom.neighborhood%> | <%= @bnbroom.reviewcommentrates.count %> reviews</h4>
+  <h4><%= @bnbroom.neighborhood%> | <%= @bnbroom.reviewcommentrates.count %> reviews</h4>
  
   <h4>Hosted by:</h4>
   <%= image_tag avatar_url(@bnbroom.user), class:"showroomavatar" %>
   <%= @bnbroom.user.full_name %>
-  <hr>
+  
       <% if @bnbroom.user.id == current_user.id %>
-      <%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %>
-      <%= link_to 'Destroy', @bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <hr>
+      <%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %> | <%= link_to 'Destroy', @bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>  <br/>
       <% end %>
-
 </div>
+      
 <div class ="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-<div class = "slickthing">
-   <% @bnbroom.photos.each do |bnbroomphotos| %>
-  <div class = "photo">
-    <%= image_tag(bnbroomphotos) %>
-  </div>
-  <% end %>
+    
+    <div class = "slickthing">
+       <% @bnbroom.photos.each do |bnbroomphotos| %>
+      <div class = "photo">
+        <%= image_tag(bnbroomphotos) %>
+      </div>
+      <% end %>
+    </div>
+    
 </div>
-</div>
+
 </div>
 
 <div class="row">
+
 <hr>
+
 <div class = "col-xs-12 col-sm-12 col-md-5 col-lg-5">
 <h2>About the space:</h2>
 <br/>
@@ -53,73 +59,77 @@
   <strong>Address:</strong>
   <%= @bnbroom.neighborhood %>
 </div>
+
 <div class = "col-xs-12 col-sm-12 col-md-7 col-lg-7" id="showroommap">
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bnbroom.latitude}%2C#{@bnbroom.longitude}" %>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bnbroom.latitude}%2C#{@bnbroom.longitude}" %>
 </div>
+    
 </div>
+
+
 <div class = "row">
   <hr>
   <h3>Amenities/Notes:</h3>
 <br/>
-<% if @bnbroom.selfcheckin == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/61/61259.svg", :style => 'height: 50px;') %> | Self-check in
-<% else %>
-  Please wait for someone to check you in.
-<% end %>
+    <% if @bnbroom.selfcheckin == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/61/61259.svg", :style => 'height: 50px;') %> | Self-check in
+    <% else %>
+      Please wait for someone to check you in.
+    <% end %>
 <br/>
-<% if @bnbroom.tvavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/25/25240.svg", :style => 'height: 50px;') %> | Cable TV
-  <% else %>
-No TV available.
-<% end %>
+    <% if @bnbroom.tvavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/25/25240.svg", :style => 'height: 50px;') %> | Cable TV
+    <% else %>
+      No TV available.
+    <% end %>
 <br/>
-<% if @bnbroom.wifiavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/159/159599.svg", :style => 'height: 50px;') %> | Wifi
-  <% else %>
-No wifi available.
-<% end %>
+    <% if @bnbroom.wifiavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/159/159599.svg", :style => 'height: 50px;') %> | Wifi
+    <% else %>
+      No wifi available.
+    <% end %>
 <br/>
-<% if @bnbroom.acavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/161/161943.svg", :style => 'height: 50px;') %> | Air conditioning
-<% else %>
-No air conditioner available.
-<% end %>
+    <% if @bnbroom.acavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/161/161943.svg", :style => 'height: 50px;') %> | Air conditioning
+    <% else %>
+      No air conditioner available.
+    <% end %>
 <br/>
-<% if @bnbroom.essentialsavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/100/100520.svg", :style => 'height: 50px;') %> | Towels and toiletries
-<% else %>
-No towel and other essentials available.
-<% end %>
+    <% if @bnbroom.essentialsavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/100/100520.svg", :style => 'height: 50px;') %> | Towels and toiletries
+    <% else %>
+      No towel and other essentials available.
+    <% end %>
 <br/>
-<% if @bnbroom.parkingavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/75/75905.svg", :style => 'height: 50px;') %> | Parking slot
-<% else %>
-No parking slot available.
-<% end %>
+    <% if @bnbroom.parkingavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/75/75905.svg", :style => 'height: 50px;') %> | Parking slot
+    <% else %>
+      No parking slot available.
+    <% end %>
 <br/>
-<% if @bnbroom.kitchenvail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/45/45471.svg", :style => 'height: 50px;') %> | Kitchen
-<% else %>
-No cooking allowed.
-<% end %>
+    <% if @bnbroom.kitchenvail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/45/45471.svg", :style => 'height: 50px;') %> | Kitchen
+    <% else %>
+      No cooking allowed.
+    <% end %>
 <br/>
-<% if @bnbroom.heatingavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/66/66955.svg", :style => 'height: 50px;') %> | Heating
-<% else %>
-No heating available.
-<% end %>
+    <% if @bnbroom.heatingavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/66/66955.svg", :style => 'height: 50px;') %> | Heating
+    <% else %>
+      No heating available.
+    <% end %>
 <br/>
-<% if @bnbroom.deskavail == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/10/10910.svg", :style => 'height: 50px;') %> | Work area/ desk
-<% else %>
-No work desk available.
-<% end %>
+    <% if @bnbroom.deskavail == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/10/10910.svg", :style => 'height: 50px;') %> | Work area/ desk
+    <% else %>
+      No work desk available.
+    <% end %>
 <br/>
-<% if @bnbroom.famfriendly == true %>
-  <%= image_tag("https://image.flaticon.com/icons/svg/157/157774.svg", :style => 'height: 50px;') %> | Family-friendly
-<% else %>
-The space isn't family-friendly.
-<% end %>
+    <% if @bnbroom.famfriendly == true %>
+      <%= image_tag("https://image.flaticon.com/icons/svg/157/157774.svg", :style => 'height: 50px;') %> | Family-friendly
+    <% else %>
+      The space isn't family-friendly.
+    <% end %>
 <br/>
 </div>
 
@@ -131,7 +141,7 @@ The space isn't family-friendly.
 <br/>
 <%= render 'reviewcommentrates/newreview' %>
 </div>
-</div>
+
 
 <div class="row" id="nearby">
 <h3>Nearby rooms</h3>
@@ -148,8 +158,19 @@ The space isn't family-friendly.
 </div>
 
 <br/> <br/> <br/> <br/>
+<% if @bnbroom.user.id != current_user.id %>
+  <div class = "navbar-fixed-bottom">
+    <div class = "row">
+      <div class = "col-xs-12 col-sm-12 col-md-2 col-lg-2" id="price">
+        <%= @bnbroom.room_price %> per night
+      </div>
+      <div class = "col-xs-12 col-sm-12 col-md-10 col-lg-10" id="dates">
+        <%= render "bookings/form" %>
+      </div>
+  </div>
+  </div>
+<% end %>
 
-<div class = "navbar-fixed-bottom">
-  <br/>
-<%= render "bookings/form" %>
 </div>
+
+

@@ -44,12 +44,13 @@ ActiveRecord::Schema.define(version: 20170809061108) do
     t.integer  "booking_id"
     t.integer  "user_id"
     t.integer  "bnbroom_id"
-    t.string   "startdate"
-    t.string   "enddate"
+    t.date     "startdate"
+    t.date     "enddate"
     t.integer  "nightprice"
     t.integer  "totalprice"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "paymentstatus"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "bookings", ["bnbroom_id"], name: "index_bookings_on_bnbroom_id"

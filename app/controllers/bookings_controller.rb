@@ -44,7 +44,6 @@ class BookingsController < ApplicationController
   end
   end
 
-
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
   def update

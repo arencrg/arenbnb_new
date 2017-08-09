@@ -1,10 +1,11 @@
 <%= form_for(Booking.new) do |f| %>
-  <%= @bnbroom.room_price %> per night | <%= f.label :startdate %> <%= f.date_select :startdate %>  | <%= f.label :enddate %>  <%= f.date_select :enddate %> | <%= f.submit "Book Now" %>
+<%= f.label :startdate, "Check In", class:"checkin" %> <%= f.date_select :startdate %>  <%= f.label :enddate, "Check Out", class:"checkout" %> <%= f.date_select :enddate %> <%= f.submit "Book Now", class:"bookbutton" %>
  
 <%= f.hidden_field :bnbroom_id, value: @bnbroom.id %>
 <%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.hidden_field :nightprice, value: @bnbroom.room_price %>
 <%= f.hidden_field :totalprice %>
+
 <% end %>
 
 <script>
