@@ -36,7 +36,7 @@
 </div>
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id:"mapcol">
-  <% my_url = "http://maps.google.com/maps/api/staticmap?size=400x500&sensor=false&zoom=14" %>
+  <% my_url = "http://maps.google.com/maps/api/staticmap?size=400x500&sensor=false&zoom=8" %>
   <% @bnbrooms.each do |bnbroom| %>
   <% my_url += "&markers=#{bnbroom.latitude}%2C#{bnbroom.longitude}" %>    
   <% end %>

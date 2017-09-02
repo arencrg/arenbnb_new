@@ -17,3 +17,11 @@ Here's take two.
 - 08 Aug 2017 -- Not much progress today. It was a long-overdue rest day.
 
 - 09 Aug 2017 -- I've been able to finish a lot, I think! Even without a real messaging platform, I've been able to make do with a robust reservation system. I decided to just put the user's own rooms and the rooms he plans to book all in one page (his user profile) instead of making separate pages. I feel like I should have some sort of navbar or tabs thing? Maybe a little bit of smooth scrolling too. Hmm. Anyway, I managed to add a little bit more styling here and there. Looks like the payment system (PayPal?) will have to be for tomorrow.
+
+- 10 Aug 2017 -- Seeing as PayPal might be too big of a task for us, we've decided to move on from this project and start a new one. 
+
+--------
+
+### TODO
+
+- Go back to this project eventually to insert a real, working PayPal or whatever payment platform.
