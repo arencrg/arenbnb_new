@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Booking, type: :model do
 
-	subject { described_class.new(startdate: "11-11-2017", enddate: "16-11-2017", nightprice: 1200, totalprice: 6000) }
+	subject { described_class.new(startdate: "11-11-2017", enddate: "16-11-2017", nightprice: 1200, totalprice: 6000, paymentstatus: true) }
 
 	describe 'Check if there exists a booking' do
 
@@ -24,6 +24,9 @@ RSpec.describe Booking, type: :model do
       end
 			it "checks if there is a total price" do
 					expect(subject.totalprice).not_to be_nil
+			end
+			it "checks if there is a payment status" do
+					expect(subject.paymentstatus).not_to be_nil
 			end
     end
 

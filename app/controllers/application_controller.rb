@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :redirect_if_not_current_user, only: :index
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
@@ -14,13 +15,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     devise_parameter_sanitizer.permit(:account_update, keys: [:email, :avatar, :full_name, :nickname, :bio, :contact, :location, :schoolwork])
   end
-  
+
     helper_method :resource_name, :resource, :devise_mapping, :resource_class
 
   def resource_name
     :user
   end
- 
+
   def resource
     @resource ||= User.new
   end
@@ -28,10 +29,10 @@ class ApplicationController < ActionController::Base
   def resource_class
     User
   end
- 
+
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  
+
 end

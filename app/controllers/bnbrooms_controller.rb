@@ -1,7 +1,6 @@
 class BnbroomsController < ApplicationController
   before_action :set_bnbroom, only: [:show, :edit, :update, :destroy]
 
-
   # GET /bnbrooms
   # GET /bnbrooms.json
   def index
@@ -11,7 +10,7 @@ class BnbroomsController < ApplicationController
     else
       @bnbrooms = Bnbroom.all
     end
-  end  
+  end
 
   # GET /bnbrooms/1
   # GET /bnbrooms/1.json
@@ -30,7 +29,7 @@ class BnbroomsController < ApplicationController
 
   # POST /bnbrooms
   # POST /bnbrooms.json
-  
+
   def create
   @user = current_user
   @bnbroom = Bnbroom.create(bnbroom_params.merge(user_id: current_user.id))
@@ -44,7 +43,7 @@ class BnbroomsController < ApplicationController
     end
   end
 end
-  
+
 
   # PATCH/PUT /bnbrooms/1
   # PATCH/PUT /bnbrooms/1.json

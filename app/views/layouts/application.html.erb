@@ -15,9 +15,9 @@
 
 </head>
 <body>
- 
+
 <div class = "container">
-  
+
   <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -31,7 +31,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-            <li><%= link_to image_tag(avatar_url(current_user)), user_path(current_user), :class => 'navbar-link' %></li>
+            <% if current_user.avatar.present? %>
+              <li><%= link_to image_tag(avatar_url(current_user)), user_path(current_user), :class => 'navbar-link' %></li>
+            <% else %>
+              <li><%= link_to image_tag("https://openclipart.org/image/2400px/svg_to_png/247319/abstract-user-flat-3.png"), user_path(current_user), :class => 'navbar-link' %></li>
+            <% end %>
             <li><%= link_to "Become a Host", new_bnbroom_path, :class => 'navbar-link' %> </li>
             <li><%= link_to "Users", users_path, :class => 'navbar-link' %> </li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
@@ -49,8 +53,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-<%= yield %>  
-  
+<%= yield %>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
