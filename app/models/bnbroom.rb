@@ -8,8 +8,7 @@ class Bnbroom < ActiveRecord::Base
     mount_uploaders :photos, PhotoUploader
     serialize :photos, JSON
 
-    validates_presence_of :room_name, :room_type, :room_price
-        
+    validates_presence_of :room_name, :room_type, :room_price, :bedcount, :bedroomcount, :bathroomcount, :neighborhood
     geocoded_by :neighborhood
     after_validation :geocode, :if => :neighborhood_changed?
 end
