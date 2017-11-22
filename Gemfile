@@ -23,8 +23,7 @@ group :development, :test do
 
 end
 
-group :production do
-  # Added postgres and made it production only.
+group :production do  # Added postgres and made it production only.
   gem 'pg', '~> 0.18.4'
   gem 'rails_12factor'
 end
