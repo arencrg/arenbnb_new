@@ -1,4 +1,6 @@
 require 'support/controller_helpers'
+require 'support/controller_macros'
+require 'support/database_cleaner'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
