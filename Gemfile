@@ -8,7 +8,7 @@ gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.4'
+gem 'rails', '4.2.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -24,6 +24,10 @@ group :development, :test do  # Added development group.
   gem 'rspec-rails', '~> 3.6'
   gem 'cucumber-rails', '~> 1.5', :require => false
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner', '~> 1.6'
+  gem 'capybara', '~> 2.15'
+
 end
 
 group :production do  # Added postgres and made it production only.

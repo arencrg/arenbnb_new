@@ -5,13 +5,21 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 
 require 'rspec/rails'
+require 'database_cleaner'
+require 'devise'
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+
+#actually ko sure kung gumagana to hahaha pero sige lagay pa rin natin
   config.render_views
+#devise
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include ControllerHelpers, type: :controller
+  config.extend ControllerMacros, :type => :controller
+#factory bot
+  config.include FactoryBot::Syntax::Methods
+
 end
