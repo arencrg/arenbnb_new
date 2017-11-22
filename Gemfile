@@ -31,7 +31,7 @@ group :development, :test do  # Added development group.
 end
 
 group :production do  # Added postgres and made it production only.
-#  gem 'pg', '~> 0.18.4'
+  gem 'pg', '~> 0.18.4'
   gem 'rails_12factor'
 end # Added postgres and made it production only.
 
