@@ -1,5 +1,4 @@
 FactoryBot.define do
-    # Define a basic devise user.
     factory :user do
         email "sampleuser@mail.com"
         full_name "Example User"

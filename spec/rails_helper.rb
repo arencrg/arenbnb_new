@@ -1,4 +1,3 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -14,9 +13,9 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
-#actually ko sure kung gumagana to hahaha pero sige lagay pa rin natin
+#Not sure how helpful this is but I'll put it here just in case hehehe
   config.render_views
-#devise
+#devise support
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.extend ControllerMacros, :type => :controller
 #factory bot

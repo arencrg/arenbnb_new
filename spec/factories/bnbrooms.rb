@@ -1,5 +1,4 @@
 FactoryBot.define do
-    # Define a basic devise user.
     factory :bnbroom do
       id 1
       room_name "Sample Room"
