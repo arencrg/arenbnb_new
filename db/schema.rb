@@ -13,13 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20170809061108) do
 
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "ar_internal_metadata", ["key"], name: "sqlite_autoindex_ar_internal_metadata_1", unique: true
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "bnbrooms", force: :cascade do |t|
     t.string   "room_name"
@@ -61,8 +56,8 @@ ActiveRecord::Schema.define(version: 20170809061108) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "bookings", ["bnbroom_id"], name: "index_bookings_on_bnbroom_id"
-  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id"
+  add_index "bookings", ["bnbroom_id"], name: "index_bookings_on_bnbroom_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "reviewcommentrates", force: :cascade do |t|
     t.string   "reviewtitle"
@@ -99,7 +94,9 @@ ActiveRecord::Schema.define(version: 20170809061108) do
     t.integer  "user_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "bookings", "bnbrooms"
+  add_foreign_key "bookings", "users"
 end

@@ -12,7 +12,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Added development group.
-  gem 'sqlite3'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.6'
   gem 'cucumber-rails', '~> 1.5', :require => false
@@ -32,6 +31,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  #capistrano stuff for deployment!!!!
   gem 'capistrano',         require: false
   gem 'capistrano-rbenv',   require: false
   gem 'capistrano-rbenv-install', require: false
