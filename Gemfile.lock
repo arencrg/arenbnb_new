@@ -356,6 +356,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg (~> 0.18.4)
+  puma (~> 3.11.0)
   rails (= 4.2.5)
   rails-controller-testing
   rails_12factor

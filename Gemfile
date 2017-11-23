@@ -50,3 +50,7 @@ gem 'rails_db'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'geocoder'
+
+#
+
+gem 'puma', '~> 3.11.0'
