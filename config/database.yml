@@ -17,3 +17,7 @@ test:
 production:
   <<: *default
   database: arenbnb_new_prod
+
+staging:
+  <<: *default
+  database: arenbnb_new_staging
