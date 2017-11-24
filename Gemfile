@@ -24,7 +24,7 @@ end
 
 group :production do
   # Added postgres and made it production only.
-  gem 'pg', '~> 0.18.4'
+
   gem 'rails_12factor'
 end
 
@@ -51,6 +51,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'geocoder'
 
-#
-
 gem 'puma', '~> 3.11.0'
+gem 'pg', '~> 0.18.4'

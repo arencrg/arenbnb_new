@@ -3,8 +3,8 @@ default: &default
     adapter: postgresql
     encoding: unicode
     pool: 5
-    username: deployuser
-    password: deployment
+    username: deploy
+    password: R72587
 
 development:
   <<: *default
