@@ -19,3 +19,5 @@ production:
 staging:
   <<: *default
   database: arenbnb_new_staging
+  username: postgres
+  password: postgres
