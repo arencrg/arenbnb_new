@@ -44,6 +44,6 @@ class BnbroomsControllerTest < ActionController::TestCase
       delete :destroy, id: @bnbroom
     end
 
-    assert_redirected_to bnbrooms_path
+    assert_redirected_to root_path
   end
 end
