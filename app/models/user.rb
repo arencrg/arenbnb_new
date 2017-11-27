@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
 
   has_many :bnbrooms
   has_many :reviewcommentrates, dependent: :destroy
-  has_many :photos, dependent: :destroy
   has_many :bookings
 
   # Include default devise modules. Others available are:
