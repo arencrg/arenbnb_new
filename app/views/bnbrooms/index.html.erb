@@ -11,9 +11,7 @@
 
 </div>
 
-<br/>
-<br/>
-<br/>
+<br/><br/>
 
 <div class = "row">
 
@@ -36,7 +34,7 @@
 </div>
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id:"mapcol">
-  <% my_url = "https://maps.googleapis.com/maps/api/staticmap?zoom=8&size=400x500&maptype=roadmap&key=AIzaSyD1Z6v7UZ3TR2x38vfirlFyy2YVljHkR-0" %>
+  <% my_url = "https://maps.googleapis.com/maps/api/staticmap?zoom=12&size=400x500&maptype=roadmap&key=AIzaSyD1Z6v7UZ3TR2x38vfirlFyy2YVljHkR-0" %>
   <% @bnbrooms.each do |bnbroom| %>
   <% my_url += "&markers=#{bnbroom.latitude}%2C#{bnbroom.longitude}" %>
   <% end %>
