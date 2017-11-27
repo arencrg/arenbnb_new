@@ -25,9 +25,9 @@
         <p><%= bnbroom.room_type %> at <%= bnbroom.room_price %> per night</p>
         <p><span class="glyphicon glyphicon-map-marker"></span> <%= bnbroom.neighborhood %></p>
         <p><% bnbroom.reviewcommentrates.average(:rating).to_i.times do %>
-              <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>  <% end %> 
+              <%= image_tag("https://image.flaticon.com/icons/svg/9/9029.svg", :style => 'height: 15px;')%>  <% end %>
            <%= bnbroom.reviewcommentrates.count %> review(s)</p>
-      
+
               <% if bnbroom.user.id == current_user.id %>
               <%= link_to 'Edit', edit_bnbroom_path(bnbroom) %> | <%= link_to 'Destroy', bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
@@ -36,9 +36,9 @@
 </div>
 
 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id:"mapcol">
-  <% my_url = "http://maps.google.com/maps/api/staticmap?size=400x500&sensor=false&zoom=8" %>
+  <% my_url = "https://maps.googleapis.com/maps/api/staticmap?zoom=8&size=400x500&maptype=roadmap&key=AIzaSyD1Z6v7UZ3TR2x38vfirlFyy2YVljHkR-0" %>
   <% @bnbrooms.each do |bnbroom| %>
-  <% my_url += "&markers=#{bnbroom.latitude}%2C#{bnbroom.longitude}" %>    
+  <% my_url += "&markers=#{bnbroom.latitude}%2C#{bnbroom.longitude}" %>
   <% end %>
   <%= image_tag my_url , class:'indexmap' %>
 </div>

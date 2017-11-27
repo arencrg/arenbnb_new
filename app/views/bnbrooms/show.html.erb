@@ -1,27 +1,27 @@
-<p id="notice"><%= notice %> 
+<p id="notice"><%= notice %>
 <div class = "container">
 <%= link_to 'Back', bnbrooms_path %>
 
 <div class ="row">
-  
+
 <div class ="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-  
+
   <h1><%= @bnbroom.room_name %></h1>
   <h2><%= @bnbroom.room_price %> per night</h2>
   <h4><%= @bnbroom.neighborhood%> | <%= @bnbroom.reviewcommentrates.count %> reviews</h4>
- 
+
   <h4>Hosted by:</h4>
   <%= image_tag avatar_url(@bnbroom.user), class:"showroomavatar" %>
   <%= @bnbroom.user.full_name %>
-  
+
       <% if @bnbroom.user.id == current_user.id %>
       <hr>
       <%= link_to 'Edit', edit_bnbroom_path(@bnbroom) %> | <%= link_to 'Destroy', @bnbroom, method: :delete, data: { confirm: 'Are you sure?' } %>  <br/>
       <% end %>
 </div>
-      
+
 <div class ="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-    
+
     <div class = "slickthing">
        <% @bnbroom.photos.each do |bnbroomphotos| %>
       <div class = "photo">
@@ -29,7 +29,7 @@
       </div>
       <% end %>
     </div>
-    
+
 </div>
 
 </div>
@@ -61,9 +61,10 @@
 </div>
 
 <div class = "col-xs-12 col-sm-12 col-md-7 col-lg-7" id="showroommap">
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bnbroom.latitude}%2C#{@bnbroom.longitude}" %>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=450x300&maptype=roadmap&key=AIzaSyD1Z6v7UZ3TR2x38vfirlFyy2YVljHkR-0&markers=#{@bnbroom.latitude}%2C#{@bnbroom.longitude}" %>
 </div>
-    
+
+
 </div>
 
 
@@ -172,5 +173,3 @@
 <% end %>
 
 </div>
-
-
