@@ -29,3 +29,5 @@ Here's take two.
 
 ## INTERNSHIP UPDATE (Nov 2017)
 I've been working on this while I'm interning at Proudcloud, so I've been adding Rspec testing to it. So far, so good.
+
+I've finally deployed it with capistrano through the demo server Nico gave me, yaaaay!
